@@ -1,3 +1,8 @@
 def prnt(departments):
-    with open('departments.txt', 'w') as f:
-        f.write('\n'.join(departments))
+    with open('temp.txt', 'w') as f:
+        f.write("".join(departments).strip())
+    with open("temp.txt", 'r') as r, open('departments.txt', 'w') as o:
+        for line in r:
+            if line.strip():
+                o.write(line)
+
