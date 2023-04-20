@@ -14,4 +14,5 @@ def parse():
     departments = []
     for department in soup.find_all('div', class_='main__content'):
         departments.append(department.text.strip())
+
     prnt.prnt(departments)
